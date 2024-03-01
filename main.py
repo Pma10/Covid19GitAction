@@ -2,12 +2,9 @@ import os
 import requests
 
 def create_github_issue(data):
-    # GitHub 인증 토큰 설정
     token = os.environ.get('TOKEN')
-    # GitHub 저장소 정보 설정
     username = "Pma10"
     repository = "Covid19Action"
-    # 업로드할 데이터
     issue_data = f"""
     [코로나19 API 업데이트 시간] {data['API']['updateTime']}
 
@@ -45,6 +42,7 @@ def create_github_issue(data):
 def get_corona_data():
     apiKey = os.environ.get('APIKEY')
     url = f"https://api.corona-19.kr/korea/?serviceKey={apiKey}"
+    print(url)
     response = requests.get(url)
     
     if response.status_code == 200:
