@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '12 7 * * *' # 매일 7시 12분에 실행됩니다. 한국 시간으로 설정되어 있습니다.
 
 jobs:
   build:
