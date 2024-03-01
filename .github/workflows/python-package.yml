@@ -14,19 +14,23 @@ jobs:
         python-version: ["3.11"]
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+        
     - name: Set up Environment Variables
       env:
-        APIKEY: ${{secrets.APIKEY}}
-        TOKEN: ${{secrets.TOKEN}}
+        APIKEY: ${{ secrets.APIKEY }}
+        TOKEN: ${{ secrets.TOKEN }}
         
     - name: Install dependencies
       run: |
-        pip3 install requests
+        python -m pip install --upgrade pip
+        
     - name: Run main.py
       run: |
-        python3 main.py
+        python main.py
