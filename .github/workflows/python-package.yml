@@ -25,8 +25,8 @@ jobs:
         APIKEY: ${{secrets.APIKEY}}
         TOKEN: ${{secrets.TOKEN}}
       run: |
-        echo "APIKEY=$APIKEY" >> $GITHUB_ENV
-        echo "TOKEN=$TOKEN" >> $GITHUB_ENV
+        echo "APIKEY=$APIKEY" >> $APIKEY.env
+        echo "TOKEN=$TOKEN" >> $TOKEN.env
     - name: Install dependencies
       run: |
         pip3 install requests
