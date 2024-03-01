@@ -21,12 +21,12 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Set up Environment Variables
-      env:
-        APIKEY: ${{secrets.APIKEY}}
-        TOKEN: ${{secrets.TOKEN}}
-      run: |
-        echo "APIKEY=$APIKEY" >> $APIKEY.env
-        echo "TOKEN=$TOKEN" >> $TOKEN.env
+      run: | 
+        echo "APIKEY=$APIKEY" >> .env
+        echo "TOKEN=$TOKEN" >> .env
+      env: 
+        APIKEY : ${{secrets.APIKEY}}
+        TOKEN : ${{secrets.TOKEN}}
     - name: Install dependencies
       run: |
         pip3 install requests
