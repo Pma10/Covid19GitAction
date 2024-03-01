@@ -23,9 +23,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
         
     - name: Set up Environment Variables
-      env:
-        APIKEY: ${{ secrets.APIKEY }}
-        TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        echo "APIKEY=${{ secrets.APIKEY }}" >> $GITHUB_ENV
+        echo "TOKEN=${{ secrets.TOKEN }}" >> $GITHUB_ENV
         
     - name: Install dependencies
       run: |
