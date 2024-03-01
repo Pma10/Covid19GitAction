@@ -33,6 +33,7 @@ def create_github_issue(data):
     url = f"https://api.github.com/repos/{username}/{repository}/issues"
     # 이슈 생성 요청 보내기
     response = requests.post(url, json={"title": "{(datetime.datetime.utcnow() + datetime.timedelta(hours=9)).strftime('%Y년 %m월 %d일')} 코로나 업데이트", "body": issue_data}, headers={"Authorization": f"token {token}"})
+    print(issue_data)
     # 응답 확인
     if response.status_code == 201:
         print("새로운 이슈가 성공적으로 생성되었습니다.")
