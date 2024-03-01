@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 15 * * *' # 매일 UTC 기준 15:00(한국 시간 기준 자정)에 실행됩니다.
+    - cron: '0 15 * * *'
 
 jobs:
   build:
