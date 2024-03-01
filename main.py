@@ -5,7 +5,7 @@ import datetime
 def create_github_issue(data):
     token = os.environ.get('TOKEN')
     username = "Pma10"
-    repository = "Covid19Action"
+    repository = "Covid19GitAction"
     issue_data = f"""
     [코로나19 API 업데이트 시간] {data['API']['updateTime']}
 
