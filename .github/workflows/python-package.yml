@@ -20,6 +20,13 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Acess Secrets
+      run: | 
+        echo "APIKEY=$APIKEY" >> .env
+        echo "TOKEN=$TOKEN" >> .env
+      env: 
+        APIKEY : ${{secrets.APIKEY}}
+        TOKEN : ${{secrets.TOKEN}}
     - name: Run main.py
       run: |
         pip3 install requests
