@@ -1,8 +1,9 @@
+import os
 import requests
 
 def create_github_issue(data):
     # GitHub 인증 토큰 설정
-    token = ${{secrets.TOKEN}}
+    token = os.environ.get('TOKEN')
     # GitHub 저장소 정보 설정
     username = "Pma10"
     repository = "Covid19Action"
@@ -42,7 +43,7 @@ def create_github_issue(data):
 
 # 데이터 가져오기
 def get_corona_data():
-    apiKey = ${{secrets.APIKEY}}
+    apiKey = os.environ.get('APIKEY')
     url = f"https://api.corona-19.kr/korea/?serviceKey={apiKey}"
     response = requests.get(url)
     
