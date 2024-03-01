@@ -1,8 +1,9 @@
 name: Python package
 
 on:
-  schedule:
-    - cron: '0 9 * * *' # 매일 6시 (한국 시간 기준)
+  push:
+    branches:
+      - main
 
 jobs:
   build:
